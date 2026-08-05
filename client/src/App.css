@@ -1,0 +1,264 @@
+/* ===========================
+   Global
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* ===========================
+   Login & Register
+=========================== */
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e293b;
+    color: white;
+    padding: 15px 30px;
+}
+
+.navbar h2 {
+    font-size: 24px;
+}
+
+.navbar div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar button {
+    width: auto;
+    padding: 8px 18px;
+    margin-top: 0;
+    background: #dc2626;
+}
+
+.navbar button:hover {
+    background: #b91c1c;
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
+.dashboard,
+.page {
+    padding: 30px;
+}
+
+.dashboard h1,
+.page h2 {
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 8px 0;
+}
+
+/* ===========================
+   Buy Box
+=========================== */
+
+.buy-box {
+    margin-top: 30px;
+    width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+}
+
+.buy-box h3 {
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.12);
+}
+
+thead {
+    background: #2563eb;
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* ===========================
+   Notifications
+=========================== */
+
+.notification {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.12);
+}
+
+.notification h3 {
+    margin-bottom: 10px;
+}
+
+.notification p {
+    margin-bottom: 10px;
+}
+
+.notification button {
+    width: auto;
+    margin-top: 10px;
+}
+
+.unread {
+    border-left: 6px solid red;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .navbar div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buy-box {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}
