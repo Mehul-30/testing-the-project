@@ -14,6 +14,27 @@ const buyStock = async (req, res) => {
 
         await connection.beginTransaction();
 
+        if(!user_id || !stock_id || !quantity){
+            return res.status(400).json({
+                message : "All feilds are valid"
+            })
+        }
+
+
+        //Zero quantity
+
+        if(quantity === 0){
+            return res.status(400).json({
+                message : "Add quantities to buy stock"
+            })
+        }
+
+        if(quantity < 0){
+            return res.status(400).json({
+                message : "Quantity should not be negative"
+            })
+        }
+
         // Get stock details
         const [rows] = await connection.query(
 
@@ -89,7 +110,7 @@ const buyStock = async (req, res) => {
         );
 
         // Record purchase
-        await connection.query(
+        const updateToRetail = await connection.query(
 
             `INSERT INTO retail
             (user_id, stock_id, quantity)
@@ -190,8 +211,11 @@ const buyStock = async (req, res) => {
 
         res.status(200).json({
 
-            message: "Purchase Successful"
-
+            message: "Purchase Successful",
+            beforeUpdate : rows[0].quantity,
+            afterUpdate : currentQuantity,
+            data : updated,
+            updateToRetail : updateToRetail
         });
 
     }

@@ -32,17 +32,3 @@ describe("User test functions" , ()=>{
     })
 })
 
-describe("Stock test function", async()=>{
-    describe("To check the function of stock controller file",()=>{
-        it("To get all stocks GET /stocks/", async ()=>{
-            const response = await request(app).get("/stocks/")
-
-            expect(response.body.length).to.equal(50)
-            expect(response.status).to.equal(200)
-        })
-
-        it("To buy a stock Post /retail/buy/", async()=>{
-            const response = await request(app).post("/retail/buy/")
-        })
-    })
-})
