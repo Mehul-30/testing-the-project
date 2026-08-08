@@ -39,7 +39,7 @@ const register = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        await db.query(
+        const data = await db.query(
 
             `INSERT INTO users
             (full_name,username,password,role)
@@ -56,9 +56,11 @@ const register = async (req, res) => {
 
         );
 
-        res.status(201).json({
+        return res.status(201).json({
 
-            message: "User Registered Successfully"
+            message: "User Registered Successfully",
+            data : data
+
 
         });
 
@@ -146,11 +148,9 @@ const login = async (req, res) => {
         res.status(200).json({
 
             message: "Login Successful",
-
+            status : true,
             token,
-
             user: {
-
                 id: user.user_id,
                 name: user.full_name,
                 username: user.username,
@@ -168,7 +168,8 @@ const login = async (req, res) => {
 
         res.status(500).json({
 
-            message: "Server Error"
+            message: "Server Error",
+            id : user.user_id
 
         });
 

@@ -1,7 +1,9 @@
 const db = require("../database/connectDatabase");
 
+
 // Add quantity to temporary table
 const addStock = async (req, res) => {
+   
 
     try {
 
@@ -50,6 +52,8 @@ const addStock = async (req, res) => {
 
 // Import stocks to main table
 const importStocks = async (req, res) => {
+
+    
 
     const connection = await db.getConnection();
 
@@ -183,6 +187,8 @@ const importStocks = async (req, res) => {
 // View temporary table
 const getNewStocks = async (req, res) => {
 
+    
+
     try {
 
         const [rows] = await db.query(
@@ -219,6 +225,7 @@ const getNewStocks = async (req, res) => {
 // Get all stocks
 const getAllStocks = async (req, res) => {
 
+
     try {
 
         const [rows] = await db.query(
@@ -235,6 +242,7 @@ const getAllStocks = async (req, res) => {
              ON s.category_id = c.category_id`
 
         );
+
 
         res.status(200).json(rows);
 
@@ -255,6 +263,7 @@ const getAllStocks = async (req, res) => {
 
 // Get one stock
 const getStock = async (req, res) => {
+
 
     try {
 

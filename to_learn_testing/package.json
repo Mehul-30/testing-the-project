@@ -1,0 +1,21 @@
+{
+  "name": "to_learn_testing",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+        "start": "node server.js",
+        "test": "mocha test/**/*.test.js --exit"
+    },
+
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.8.0",
+    "supertest": "^7.2.2"
+  }
+}

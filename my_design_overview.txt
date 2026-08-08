@@ -12,7 +12,7 @@ if stock less that 10----------->wanted_stocks table ---------------------------
 the notification will be send on there respective profile based on the userid present in the notification table
 
 notifications will be also sent while restocking there will be separate table for restock and joining these restock table
-with the wanted_stocks table, usernotify_table the users can get to know the notification that they try to buy previouly
+with the wanted_stocks table, usernotify_table the user can get to know the notification that they try to buy previouly
 
 
 
